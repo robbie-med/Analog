@@ -1,0 +1,29 @@
+@page { margin: 0.65in; }
+
+body{
+  background:#fff !important;
+  color:#000 !important;
+}
+
+.topbar, .sidebar, .kbd, .btn, .search { display:none !important; }
+
+.content{ padding:0 !important; }
+.doc{ max-width:none !important; }
+
+.hero, .quickstart, .card, .details, .check, .tablewrap{
+  box-shadow:none !important;
+  border:1px solid #bbb !important;
+  background:#fff !important;
+}
+
+a{ color:#000 !important; text-decoration:underline !important; }
+
+.template{
+  background:#f7f7f7 !important;
+  border:1px solid #bbb !important;
+}
+
+details { break-inside: avoid; }
+section { break-inside: avoid; }
+
+h1,h2,h3{ page-break-after: avoid; }
