@@ -1,0 +1,631 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="color-scheme" content="light dark" />
+  <title>Analog OS Manual</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="print.css" media="print" />
+</head>
+<body>
+  <a class="skip" href="#content">Skip to content</a>
+
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo" aria-hidden="true">AOS</div>
+      <div class="brandtext">
+        <div class="title">Analog Operating System</div>
+        <div class="subtitle">A practical manual for running life on paper</div>
+      </div>
+    </div>
+
+    <div class="topbar-actions">
+      <button id="btnPrint" class="btn" type="button" title="Print manual">Print</button>
+      <button id="btnExpand" class="btn" type="button" title="Expand/collapse all sections">Expand all</button>
+      <button id="btnTheme" class="btn" type="button" title="Toggle theme">Theme</button>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar" aria-label="Manual navigation">
+      <div class="sidebar-inner">
+        <div class="search">
+          <label class="sr-only" for="searchBox">Search</label>
+          <input id="searchBox" type="search" placeholder="Search manual (Ctrl/⌘ K)" autocomplete="off" />
+          <div class="search-hint" id="searchHint" aria-live="polite"></div>
+        </div>
+
+        <nav id="toc" class="toc" aria-label="Table of contents">
+          <!-- populated by JS -->
+        </nav>
+
+        <div class="sidebar-footer">
+          <div class="meta">
+            <div><strong>Edition:</strong> <span id="edition">17FEB2026</span></div>
+            <div><strong>Principle:</strong> digital transmits, paper thinks</div>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <main id="content" class="content">
+      <article class="doc" id="doc">
+
+        <section class="hero">
+          <h1>Analog Operating System (AOS)</h1>
+          <p class="lead">
+            This manual defines a stable, low-tech life infrastructure: capture → action → record → archive → reference.
+            Digital stays as a servant (communication + storage). Paper becomes the source of truth for cognition and decisions.
+          </p>
+
+          <div class="callouts">
+            <div class="callout">
+              <h3>What this is</h3>
+              <p>A set of physical containers + rules that keep your life organized for years without apps.</p>
+            </div>
+            <div class="callout">
+              <h3>What this is not</h3>
+              <p>Not a productivity hack. Not a journal aesthetic. Not a new dashboard.</p>
+            </div>
+            <div class="callout">
+              <h3>Success condition</h3>
+              <p>You can answer the five questions in ≤10 seconds: today, own, done, proof, know.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="quickstart" id="quickstart">
+          <h2>Quickstart (60 minutes)</h2>
+          <ol class="steps">
+            <li><strong>Choose containers:</strong> 1 command book, 1 record binder, 1 archive box, 1 wall calendar.</li>
+            <li><strong>Label dividers:</strong> Medical, Financial, Insurance, Employment, Legal, Household, Vehicles.</li>
+            <li><strong>Build the archive index:</strong> first sheet inside archive box lists what’s where.</li>
+            <li><strong>Set your cadence:</strong> weekly maintenance (15–25 min) + monthly review (30–45 min).</li>
+            <li><strong>Enforce the boundary:</strong> paper for decisions; digital only for transmission + cold storage.</li>
+          </ol>
+
+          <div class="rulebox">
+            <h3>Golden boundary rule</h3>
+            <p><strong>If it changes your behavior → paper first.</strong> If it only informs you → digital permitted.</p>
+          </div>
+        </section>
+
+        <section id="architecture">
+          <h2>System architecture</h2>
+          <p>The AOS has five physical layers, each with a time horizon and a strict purpose. Mixing layers causes chaos.</p>
+
+          <div class="tablewrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Layer</th>
+                  <th>Name</th>
+                  <th>Time horizon</th>
+                  <th>Purpose</th>
+                  <th>Container</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>Capture</td>
+                  <td>minutes–days</td>
+                  <td>collect inputs</td>
+                  <td>pocket notebook / index cards</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>Action</td>
+                  <td>days–months</td>
+                  <td>run active life</td>
+                  <td>command book / action binder</td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>Record</td>
+                  <td>months–years</td>
+                  <td>structured history</td>
+                  <td>record binder</td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td>Archive</td>
+                  <td>years–decades</td>
+                  <td>original proof</td>
+                  <td>archive box (ideally fire-resistant)</td>
+                </tr>
+                <tr>
+                  <td>5</td>
+                  <td>Reference</td>
+                  <td>timeless</td>
+                  <td>knowledge lookup</td>
+                  <td>reference binder(s)</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="check">
+            <h3>The five questions</h3>
+            <ul>
+              <li><strong>What am I doing today?</strong> → Command book / Action layer</li>
+              <li><strong>What do I own?</strong> → Inventory binder</li>
+              <li><strong>What have I done?</strong> → Record binder</li>
+              <li><strong>Where is proof?</strong> → Archive box</li>
+              <li><strong>What do I know?</strong> → Reference binder</li>
+            </ul>
+          </div>
+        </section>
+
+        <section id="setup">
+          <h2>Physical setup</h2>
+          <div class="grid2">
+            <div>
+              <h3>Minimum viable kit</h3>
+              <ul>
+                <li>Command book (your green book is perfect)</li>
+                <li>Record binder + dividers</li>
+                <li>Archive box + folders</li>
+                <li>Wall calendar (monthly)</li>
+                <li>Pen + pencil + highlighter</li>
+              </ul>
+            </div>
+            <div>
+              <h3>Recommended upgrades</h3>
+              <ul>
+                <li>Fire-resistant archive storage</li>
+                <li>Portable emergency folder</li>
+                <li>Label maker or consistent handwriting</li>
+                <li>Hole punch + staples + paper clips</li>
+                <li>Document sleeves for originals you must handle</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="rulebox">
+            <h3>One rule prevents 80% of failure</h3>
+            <p><strong>Touch paper once.</strong> When you receive it: trash, record, archive, or act—immediately.</p>
+          </div>
+        </section>
+
+        <section id="capture">
+          <h2>Layer 1 — Capture</h2>
+          <p><strong>Purpose:</strong> prevent mental RAM overload. Capture is temporary by design.</p>
+
+          <details class="details" open>
+            <summary>Capture rules</summary>
+            <ul>
+              <li>Everything enters the system through capture.</li>
+              <li>Nothing lives here permanently.</li>
+              <li>Process capture daily: transfer, schedule, file, or discard.</li>
+              <li>If it’s not processed within 48 hours, it becomes clutter.</li>
+            </ul>
+          </details>
+
+          <details class="details">
+            <summary>Capture formats</summary>
+            <div class="grid2">
+              <div>
+                <h4>Pocket notebook</h4>
+                <ul>
+                  <li>Best for continuous notes</li>
+                  <li>Use short bullets</li>
+                  <li>Mark with symbols: ☐ task, ◇ idea, ! urgent, → file</li>
+                </ul>
+              </div>
+              <div>
+                <h4>Index cards</h4>
+                <ul>
+                  <li>Best for one-thought-per-card</li>
+                  <li>Easy to sort into projects</li>
+                  <li>Great for “inbox” processing</li>
+                </ul>
+              </div>
+            </div>
+          </details>
+        </section>
+
+        <section id="action">
+          <h2>Layer 2 — Action (Command)</h2>
+          <p><strong>Purpose:</strong> run your life. Planning, tasks, projects, and decisions live here.</p>
+
+          <details class="details" open>
+            <summary>Daily page template (command book)</summary>
+            <pre class="template">DATE: 17FEB2026
+
+TOP 3 (must happen)
+1.
+2.
+3.
+
+TASKS
+☐
+☐
+☐
+
+APPTS / TIME-BOXES
+-
+
+NOTES (brief)
+-
+
+CLOSE-OUT
+Wins:
+Loose ends (migrate):
+</pre>
+          </details>
+
+          <details class="details">
+            <summary>Project page template</summary>
+            <pre class="template">PROJECT:
+Outcome:
+Deadline:
+Next 3 actions:
+1.
+2.
+3.
+Dependencies / Waiting on:
+Notes:</pre>
+          </details>
+
+          <details class="details">
+            <summary>Decision log template</summary>
+            <pre class="template">DECISION:
+DATE:
+Context:
+Options:
+A)
+B)
+C)
+Choice:
+Reason:
+Expected outcome:
+Review date (optional):</pre>
+          </details>
+        </section>
+
+        <section id="records">
+          <h2>Layer 3 — Record binder</h2>
+          <p><strong>Purpose:</strong> your structured history. This is where “what happened” is kept cleanly.</p>
+
+          <div class="grid2">
+            <div>
+              <h3>Suggested dividers</h3>
+              <ul>
+                <li>Medical</li>
+                <li>Financial</li>
+                <li>Insurance</li>
+                <li>Employment</li>
+                <li>Education</li>
+                <li>Household</li>
+                <li>Legal</li>
+                <li>Vehicles</li>
+              </ul>
+            </div>
+            <div>
+              <h3>Record principles</h3>
+              <ul>
+                <li>Records are factual, not reflective.</li>
+                <li>One page per event if needed; keep summaries.</li>
+                <li>Write dates consistently (12OCT / 12OCT2022).</li>
+                <li>Cross-reference to archive when proof exists.</li>
+              </ul>
+            </div>
+          </div>
+
+          <details class="details" open>
+            <summary>Medical record page</summary>
+            <pre class="template">DATE:
+PROVIDER:
+REASON:
+FINDINGS:
+TREATMENT:
+FOLLOW-UP:
+ARCHIVE PROOF (if any): (Folder / Doc)</pre>
+          </details>
+
+          <details class="details">
+            <summary>Financial tracking (weekly ledger)</summary>
+            <pre class="template">WEEK OF:
+Income:
+- source: amount
+
+Expenses (major only):
+DATE | Category | Amount | Method | Notes
+-----|----------|--------|--------|------
+     |          |        |        |
+
+Debt:
+- account: balance change
+
+Notes:
+</pre>
+          </details>
+
+          <details class="details">
+            <summary>Household maintenance log</summary>
+            <pre class="template">ITEM:
+SERVICE PERFORMED:
+DATE:
+NEXT DUE:
+COST:
+NOTES:
+ARCHIVE PROOF (receipt/warranty):</pre>
+          </details>
+
+          <details class="details">
+            <summary>Vehicle log</summary>
+            <pre class="template">VEHICLE:
+DATE:
+MILEAGE:
+SERVICE:
+COST:
+SHOP:
+NEXT DUE:
+ARCHIVE PROOF:</pre>
+          </details>
+        </section>
+
+        <section id="archive">
+          <h2>Layer 4 — Archive box (proof)</h2>
+          <p>
+            <strong>Purpose:</strong> retain originals and irreplaceable proof.
+            Archive is sacred: no scratch paper, no mixed notes, no “maybe important later.”
+          </p>
+
+          <details class="details" open>
+            <summary>Folder schema (recommended)</summary>
+            <div class="grid2">
+              <div>
+                <ul>
+                  <li><strong>IDENTITY</strong> (birth cert, passport copies, SSN docs)</li>
+                  <li><strong>LEGAL</strong> (contracts, wills, legal notices)</li>
+                  <li><strong>MEDICAL</strong> (summaries, key tests, immunizations)</li>
+                  <li><strong>FINANCIAL</strong> (bank letters, major receipts)</li>
+                  <li><strong>INSURANCE</strong> (policies, claim summaries)</li>
+                </ul>
+              </div>
+              <div>
+                <ul>
+                  <li><strong>PROPERTY</strong> (deeds, leases, titles)</li>
+                  <li><strong>TAXES</strong> (one folder per year)</li>
+                  <li><strong>EMPLOYMENT</strong> (offers, evaluations, credentials)</li>
+                  <li><strong>CERTIFICATES</strong> (licenses, training)</li>
+                  <li><strong>WARRANTIES</strong> (big-ticket items)</li>
+                </ul>
+              </div>
+            </div>
+          </details>
+
+          <details class="details" open>
+            <summary>Master archive index (first sheet in the box)</summary>
+            <pre class="template">MASTER ARCHIVE INDEX
+
+IDENTITY
+- Birth certificate (original)
+- Passport copy
+- Social Security documentation
+
+LEGAL
+- Lease / deed / title
+- Wills / POA
+- Contracts
+
+TAXES
+- 2023 return + W2s
+- 2024 return + W2s
+- 2025 return + W2s
+
+(Keep newest documents at the front of each folder)</pre>
+          </details>
+
+          <details class="details">
+            <summary>Archive filing rules</summary>
+            <ul>
+              <li><strong>Originals only</strong> (or clearly labeled copies).</li>
+              <li>Sort newest → front.</li>
+              <li>Every archived document should be referenced from the Record binder when relevant.</li>
+              <li>If you remove a document, leave a placeholder note.</li>
+            </ul>
+          </details>
+
+          <details class="details">
+            <summary>Retention guidance (simple)</summary>
+            <ul>
+              <li><strong>Keep forever:</strong> identity, titles/deeds, licenses/certificates, major contracts, tax returns (and key attachments), insurance policies + claim closures.</li>
+              <li><strong>Keep 7 years:</strong> most financial proofs, receipts related to taxes, major medical bills.</li>
+              <li><strong>Keep 1–2 years:</strong> routine receipts, minor statements, nonessential notices.</li>
+            </ul>
+            <p class="note">If a paper can change your legal/financial status later, keep it longer.</p>
+          </details>
+        </section>
+
+        <section id="reference">
+          <h2>Layer 5 — Reference library</h2>
+          <p><strong>Purpose:</strong> knowledge you want available without screens.</p>
+
+          <details class="details" open>
+            <summary>Suggested reference binder sections</summary>
+            <ul>
+              <li>Home procedures (shutoffs, maintenance, vendors)</li>
+              <li>Emergency procedures (contacts, routes, checklists)</li>
+              <li>Cooking staples (go-to recipes)</li>
+              <li>Fitness templates (simple programs)</li>
+              <li>“Lessons learned” (1 page per lesson)</li>
+            </ul>
+          </details>
+
+          <details class="details">
+            <summary>Lessons learned template</summary>
+            <pre class="template">LESSON:
+DATE:
+What happened:
+What I’ll do next time:
+Checklist / rule:</pre>
+          </details>
+        </section>
+
+        <section id="inventory">
+          <h2>Inventory & home records</h2>
+          <p>
+            An inventory binder prevents rebuying, forgetting, and “where is that?” spirals.
+            Keep it simple: location + quantity + last checked.
+          </p>
+
+          <details class="details" open>
+            <summary>Inventory entry template</summary>
+            <pre class="template">ITEM:
+LOCATION:
+QUANTITY:
+CONDITION:
+LAST CHECKED:
+NOTES:</pre>
+          </details>
+
+          <details class="details">
+            <summary>Audit cadence</summary>
+            <ul>
+              <li>Pantry: monthly quick check</li>
+              <li>Tools/gear: quarterly</li>
+              <li>Big inventory (everything): yearly</li>
+            </ul>
+          </details>
+        </section>
+
+        <section id="cadence">
+          <h2>Maintenance cadence</h2>
+
+          <div class="grid2">
+            <div class="card">
+              <h3>Weekly (15–25 minutes)</h3>
+              <ul>
+                <li>Process capture → action/record/archive/trash</li>
+                <li>Update financial weekly ledger</li>
+                <li>Review calendar + top projects</li>
+                <li>File loose papers</li>
+              </ul>
+            </div>
+
+            <div class="card">
+              <h3>Monthly (30–45 minutes)</h3>
+              <ul>
+                <li>Reconcile month finances (big categories)</li>
+                <li>Review goals + project outcomes</li>
+                <li>Update maintenance schedules</li>
+                <li>Archive any “proof” documents</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>Yearly (1–2 hours)</h3>
+            <ul>
+              <li>Audit archive box + update master index</li>
+              <li>Archive filled notebooks/binders (label spine with date range)</li>
+              <li>Refresh emergency folder</li>
+              <li>Inventory audit</li>
+            </ul>
+          </div>
+        </section>
+
+        <section id="digital">
+          <h2>Digital boundary (your vault + files)</h2>
+          <p>
+            Keep digital as cold storage and transmission. Your Obsidian vault becomes a library, not a workspace.
+            Photos can remain digital-native (Ente is fine).
+          </p>
+
+          <details class="details" open>
+            <summary>Operating rules</summary>
+            <ul>
+              <li>Paper is the source of truth for plans, tasks, decisions, logs.</li>
+              <li>Digital is allowed for: messaging, maps, work systems, cold storage, backups.</li>
+              <li>Schedule one “library window” per week to scan/backup/file digitally.</li>
+              <li>No personal tracking apps. If you track, you track on paper.</li>
+            </ul>
+          </details>
+
+          <details class="details">
+            <summary>Simple vault containment plan</summary>
+            <ul>
+              <li>Create one folder: <code>REFERENCE_INDEX</code></li>
+              <li>Create one note: <code>MASTER_INDEX.md</code></li>
+              <li>Only index things you actually use. Ignore the rest.</li>
+            </ul>
+          </details>
+        </section>
+
+        <section id="emergency">
+          <h2>Emergency folder</h2>
+          <p>
+            This is a portable folder for fast evacuation, urgent travel, or sudden bureaucracy.
+            Keep it accessible.
+          </p>
+
+          <details class="details" open>
+            <summary>Contents checklist</summary>
+            <ul>
+              <li>ID copies (you + spouse)</li>
+              <li>Insurance cards/policies summaries</li>
+              <li>Medication list + allergies</li>
+              <li>Critical contacts</li>
+              <li>Bank contact info (not passwords)</li>
+              <li>House info: shutoffs, key contacts</li>
+            </ul>
+          </details>
+        </section>
+
+        <section id="troubleshooting">
+          <h2>Troubleshooting</h2>
+
+          <details class="details" open>
+            <summary>Problem: papers pile up</summary>
+            <ul>
+              <li>Install an “inbox tray” and process it weekly.</li>
+              <li>Reduce categories: trash/record/archive only.</li>
+              <li>Enforce “touch once.”</li>
+            </ul>
+          </details>
+
+          <details class="details">
+            <summary>Problem: I keep checking digital anyway</summary>
+            <ul>
+              <li>Set a fixed weekly “library window.”</li>
+              <li>Move planning back to paper immediately.</li>
+              <li>Keep the command book physically open where you work.</li>
+            </ul>
+          </details>
+
+          <details class="details">
+            <summary>Problem: I can’t find documents</summary>
+            <ul>
+              <li>Fix the archive index first. Index beats sorting.</li>
+              <li>Limit folder depth to one level.</li>
+              <li>Store newest at the front, always.</li>
+            </ul>
+          </details>
+        </section>
+
+        <footer class="footer">
+          <p>
+            <strong>Core idea:</strong> paper creates selection; selection creates meaning.
+            Digital creates accumulation; accumulation creates noise.
+          </p>
+          <p class="small">© You. Use, edit, print, and iterate.</p>
+        </footer>
+
+      </article>
+    </main>
+  </div>
+
+  <div class="kbd" aria-hidden="true">
+    <span class="pill">Ctrl/⌘ K</span> search
+    <span class="pill">/</span> focus
+    <span class="pill">P</span> print
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
